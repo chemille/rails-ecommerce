@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="mx-auto px-3 mt-4">
+  <%= link_to "Products >", products_path, class:"text-decoration-none link-secondary" %>
+  <%= link_to "#{@product.name}", @product, class:"text-decoration-none link-secondary" %>
+</div>
+
+<div class="container mt-2">
+  <div class="row mb-4"> 
+    <div class="col">
+      <%= image_tag @product.images.first, class:"w-100 img-fluid mx-auto"%>
+    <div class="cols-3 mt-2 gap-4">
+      <% @product.images[1..].each do |image| %>
+        <%= image_tag image, class:"w-25 img-fluid gap-4" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col">
+    <h1><%= @product.name %></h1>
+    <div class="p-2">
+        <%= @product.description %>
+    </div>
+    <div class="p-2">
+      <strong><%= number_to_currency @product.price %></strong>
+    </div>
+  </div>
+</div>
+
+<% if current_admin %>
+<div class="text-center d-flex justify-content-center gap-4">
+  <%= link_to "Edit this product", edit_product_path(@product), class:"btn btn-secondary" %> 
+  <%= button_to "Delete this product", @product, method: :delete, class:"btn btn-danger" %>
+  <%= link_to "Back to products", products_path, class:"btn btn-primary" %>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,14 @@
+<%= link_to product do %>
+  <div id="<%= dom_id product %>">
+    <div class="hovereffect card text-center bg-transparent">
+      <%= image_tag product.images.first, class:"card-body img text-center mx-auto" if product.images.any? %>
+<% end %>
+  <div class="card-text">
+    <p><%= product.name %></p>
+    <p><% product.description %></p>
+    <p><%= product.price %></p>
+  </div>
+</div>
+</div>
+
+
