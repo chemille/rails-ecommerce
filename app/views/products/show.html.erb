@@ -8,11 +8,13 @@
 <div class="container mt-2">
   <div class="row mb-4"> 
     <div class="col">
-      <%= image_tag @product.images.first, class:"w-100 img-fluid mx-auto"%>
+    <% if @product.images.any? %>
+      <%= image_tag @product.images.first, class:"w-100 img-fluid mx-auto" %>
     <div class="cols-3 mt-2 gap-4">
       <% @product.images[1..].each do |image| %>
         <%= image_tag image, class:"w-25 img-fluid gap-4" %>
       <% end %>
+    <% end %>
     </div>
   </div>
   <div class="col">
