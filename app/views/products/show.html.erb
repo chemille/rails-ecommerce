@@ -1,8 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="mx-auto px-3 mt-4">
-  <%= link_to "Products >", products_path, class:"text-decoration-none link-secondary" %>
-  <%= link_to "#{@product.name}", @product, class:"text-decoration-none link-secondary" %>
+  <%= link_to "Products", products_path, class:"text-decoration-none link-secondary" %>
+  <%= link_to "> " "#{@product.category.name}", @product.category, class:"text-decoration-none link-secondary" if @product.category %>
+  <%= link_to "> " "#{@product.name}", @product, class:"text-decoration-none link-secondary" %>
 </div>
 
 <div class="container mt-2">

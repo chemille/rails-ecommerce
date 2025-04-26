@@ -13,4 +13,6 @@
 </div>
 </div>
 
-<%= link_to "Add New Category", new_category_path, class:"btn btn-primary m-4" %>
+<% if current_admin %>
+  <%= link_to "Add New Category", new_category_path, class:"btn btn-primary m-4" %>
+<% end %>

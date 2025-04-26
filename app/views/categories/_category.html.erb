@@ -4,7 +4,7 @@
       <%= image_tag category.image, class:"card-img-overlay img mx-auto position-relative" if category.image.attached? %>
 <% end %>
   <div class="card-body hovereffect position-absolute fs-3 text-center fw-bold">
-    <p><%= category.name %></p>
+    <p><%= link_to category.name, category_path(category), class:"link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"  %></p>
   </div>
   <div class="card-text">
     <p><% category.description %></p>

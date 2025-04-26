@@ -37,8 +37,12 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
+    new_product_params = product_params.to_unsafe_h
+    if new_product_params["images"].all?(&:blank?)
+      new_product_params.delete("images") 
+    end
     respond_to do |format|
-      if @product.update(product_params)
+      if @product.update(new_product_params)
         format.html { redirect_to @product, notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
