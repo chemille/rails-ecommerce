@@ -1,14 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light bg-opacity-10">
-   <%= link_to 'Handmade Shop' , root_path, class:"navbar-brand" %>
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-   <span class="navbar-toggler-icon"></span>
+   <%= link_to 'Handmade Shop', root_path, class:"navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  
+    <span class="navbar-toggler-icon"></span>
  </button>
-
 
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
    <ul class="navbar-nav mr-auto">
     <% if user_signed_in? %>
-        <div class="m-2" style="font-weight: bold;">Hello <%= current_user.email %>!</div>   
+      <div class="m-2" style="font-weight: bold;">Hello <%= current_user.email %>!</div>   
     <% end %>
      <li class="nav-item">
        <%= link_to 'Apparel', categories_path(1, format: nil), class:"nav-link" %>
@@ -31,9 +30,7 @@
      <% end %>
    </ul>
 
-
  </div>
 </nav>
-
 
 </br>
